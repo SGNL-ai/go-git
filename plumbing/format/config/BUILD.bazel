@@ -13,7 +13,7 @@ go_library(
     ],
     importpath = "github.com/sgnl-ai/go-git/plumbing/format/config",
     visibility = ["//visibility:public"],
-    deps = ["@com_github_go_git_gcfg//:gcfg"],
+    deps = ["@com_github_go_git_gcfg//:go_default_library"],
 )
 
 go_test(
@@ -27,5 +27,5 @@ go_test(
         "section_test.go",
     ],
     embed = [":config"],
-    deps = ["@in_gopkg_check_v1//:check_v1"],
+    deps = ["@in_gopkg_check_v1//:go_default_library"],
 )

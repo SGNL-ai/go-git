@@ -11,5 +11,5 @@ go_test(
     name = "filemode_test",
     srcs = ["filemode_test.go"],
     embed = [":filemode"],
-    deps = ["@in_gopkg_check_v1//:check_v1"],
+    deps = ["@in_gopkg_check_v1//:go_default_library"],
 )

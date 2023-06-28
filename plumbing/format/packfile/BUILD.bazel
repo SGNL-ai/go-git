@@ -28,7 +28,7 @@ go_library(
         "//utils/binary",
         "//utils/ioutil",
         "//utils/sync",
-        "@com_github_go_git_go_billy_v5//:go-billy",
+        "@com_github_go_git_go_billy_v5//:go_default_library",
     ],
 )
 
@@ -55,10 +55,10 @@ go_test(
         "//plumbing/storer",
         "//storage/filesystem",
         "//storage/memory",
-        "@com_github_go_git_go_billy_v5//memfs",
-        "@com_github_go_git_go_billy_v5//osfs",
-        "@com_github_go_git_go_billy_v5//util",
-        "@com_github_go_git_go_git_fixtures_v4//:go-git-fixtures",
-        "@in_gopkg_check_v1//:check_v1",
+        "@com_github_go_git_go_billy_v5//memfs:go_default_library",
+        "@com_github_go_git_go_billy_v5//osfs:go_default_library",
+        "@com_github_go_git_go_billy_v5//util:go_default_library",
+        "@com_github_go_git_go_git_fixtures_v4//:go_default_library",
+        "@in_gopkg_check_v1//:go_default_library",
     ],
 )

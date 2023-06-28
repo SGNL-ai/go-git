@@ -13,7 +13,7 @@ go_library(
     deps = [
         "//plumbing/format/config",
         "//utils/ioutil",
-        "@com_github_go_git_go_billy_v5//:go-billy",
+        "@com_github_go_git_go_billy_v5//:go_default_library",
     ],
 )
 
@@ -26,8 +26,8 @@ go_test(
     ],
     embed = [":gitignore"],
     deps = [
-        "@com_github_go_git_go_billy_v5//:go-billy",
-        "@com_github_go_git_go_billy_v5//memfs",
-        "@in_gopkg_check_v1//:check_v1",
+        "@com_github_go_git_go_billy_v5//:go_default_library",
+        "@com_github_go_git_go_billy_v5//memfs:go_default_library",
+        "@in_gopkg_check_v1//:go_default_library",
     ],
 )

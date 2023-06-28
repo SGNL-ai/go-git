@@ -10,10 +10,10 @@ go_library(
     importpath = "github.com/sgnl-ai/go-git/utils/ioutil",
     visibility = ["//visibility:public"],
     deps = [
-        "@com_github_jbenet_go_context//io",
+        "@com_github_jbenet_go_context//io:go_default_library",
     ] + select({
         "@io_bazel_rules_go//go/platform:js": [
-            "@com_github_acomagu_bufpipe//:bufpipe",
+            "@com_github_acomagu_bufpipe//:go_default_library",
         ],
         "//conditions:default": [],
     }),
@@ -23,5 +23,5 @@ go_test(
     name = "ioutil_test",
     srcs = ["common_test.go"],
     embed = [":ioutil"],
-    deps = ["@in_gopkg_check_v1//:check_v1"],
+    deps = ["@in_gopkg_check_v1//:go_default_library"],
 )

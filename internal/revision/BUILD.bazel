@@ -18,5 +18,5 @@ go_test(
         "scanner_test.go",
     ],
     embed = [":revision"],
-    deps = ["@in_gopkg_check_v1//:check_v1"],
+    deps = ["@in_gopkg_check_v1//:go_default_library"],
 )

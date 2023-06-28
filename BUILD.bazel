@@ -2,7 +2,6 @@ load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
 load("@bazel_gazelle//:def.bzl", "gazelle")
 
 # gazelle:prefix github.com/sgnl-ai/go-git
-# gazelle:repository_macro deps.bzl%defName
 # gazelle:proto disable_global
 
 gazelle(
@@ -78,11 +77,11 @@ go_library(
         "//utils/merkletrie/index",
         "//utils/merkletrie/noder",
         "//utils/sync",
-        "@cat_dario_mergo//:mergo",
-        "@com_github_go_git_go_billy_v5//:go-billy",
-        "@com_github_go_git_go_billy_v5//osfs",
-        "@com_github_go_git_go_billy_v5//util",
-        "@com_github_sergi_go_diff//diffmatchpatch",
+        "@cat_dario_mergo//:go_default_library",
+        "@com_github_go_git_go_billy_v5//:go_default_library",
+        "@com_github_go_git_go_billy_v5//osfs:go_default_library",
+        "@com_github_go_git_go_billy_v5//util:go_default_library",
+        "@com_github_sergi_go_diff//diffmatchpatch:go_default_library",
     ],
 )
 
@@ -122,12 +121,12 @@ go_test(
         "//storage",
         "//storage/filesystem",
         "//storage/memory",
-        "@com_github_go_git_go_billy_v5//:go-billy",
-        "@com_github_go_git_go_billy_v5//memfs",
-        "@com_github_go_git_go_billy_v5//osfs",
-        "@com_github_go_git_go_billy_v5//util",
-        "@com_github_go_git_go_git_fixtures_v4//:go-git-fixtures",
-        "@in_gopkg_check_v1//:check_v1",
-        "@org_golang_x_text//unicode/norm",
+        "@com_github_go_git_go_billy_v5//:go_default_library",
+        "@com_github_go_git_go_billy_v5//memfs:go_default_library",
+        "@com_github_go_git_go_billy_v5//osfs:go_default_library",
+        "@com_github_go_git_go_billy_v5//util:go_default_library",
+        "@com_github_go_git_go_git_fixtures_v4//:go_default_library",
+        "@in_gopkg_check_v1//:go_default_library",
+        "@org_golang_x_text//unicode/norm:go_default_library",
     ],
 )

@@ -15,7 +15,7 @@ go_library(
         "//internal/url",
         "//plumbing",
         "//plumbing/format/config",
-        "@com_github_go_git_go_billy_v5//osfs",
+        "@com_github_go_git_go_billy_v5//osfs:go_default_library",
     ],
 )
 
@@ -31,8 +31,8 @@ go_test(
     embed = [":config"],
     deps = [
         "//plumbing",
-        "@com_github_go_git_go_billy_v5//osfs",
-        "@com_github_go_git_go_billy_v5//util",
-        "@in_gopkg_check_v1//:check_v1",
+        "@com_github_go_git_go_billy_v5//osfs:go_default_library",
+        "@com_github_go_git_go_billy_v5//util:go_default_library",
+        "@in_gopkg_check_v1//:go_default_library",
     ],
 )

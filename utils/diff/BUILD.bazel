@@ -5,7 +5,7 @@ go_library(
     srcs = ["diff.go"],
     importpath = "github.com/sgnl-ai/go-git/utils/diff",
     visibility = ["//visibility:public"],
-    deps = ["@com_github_sergi_go_diff//diffmatchpatch"],
+    deps = ["@com_github_sergi_go_diff//diffmatchpatch:go_default_library"],
 )
 
 go_test(
@@ -13,7 +13,7 @@ go_test(
     srcs = ["diff_ext_test.go"],
     deps = [
         ":diff",
-        "@com_github_sergi_go_diff//diffmatchpatch",
-        "@in_gopkg_check_v1//:check_v1",
+        "@com_github_sergi_go_diff//diffmatchpatch:go_default_library",
+        "@in_gopkg_check_v1//:go_default_library",
     ],
 )

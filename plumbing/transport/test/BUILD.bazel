@@ -15,7 +15,7 @@ go_library(
         "//plumbing/protocol/packp/capability",
         "//plumbing/transport",
         "//storage/memory",
-        "@com_github_go_git_go_git_fixtures_v4//:go-git-fixtures",
-        "@in_gopkg_check_v1//:check_v1",
+        "@com_github_go_git_go_git_fixtures_v4//:go_default_library",
+        "@in_gopkg_check_v1//:go_default_library",
     ],
 )

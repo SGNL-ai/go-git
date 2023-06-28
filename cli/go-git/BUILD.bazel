@@ -12,7 +12,7 @@ go_library(
     visibility = ["//visibility:private"],
     deps = [
         "//plumbing/transport/file",
-        "@com_github_jessevdk_go_flags//:go-flags",
+        "@com_github_jessevdk_go_flags//:go_default_library",
     ],
 )
 

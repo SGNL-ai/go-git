@@ -19,6 +19,6 @@ go_test(
     embed = [":transport"],
     deps = [
         "//plumbing/protocol/packp/capability",
-        "@in_gopkg_check_v1//:check_v1",
+        "@in_gopkg_check_v1//:go_default_library",
     ],
 )

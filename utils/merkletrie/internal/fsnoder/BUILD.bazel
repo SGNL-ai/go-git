@@ -23,6 +23,6 @@ go_test(
     embed = [":fsnoder"],
     deps = [
         "//utils/merkletrie/noder",
-        "@in_gopkg_check_v1//:check_v1",
+        "@in_gopkg_check_v1//:go_default_library",
     ],
 )

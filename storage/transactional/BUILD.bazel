@@ -43,7 +43,7 @@ go_test(
         "//storage/filesystem",
         "//storage/memory",
         "//storage/test",
-        "@com_github_go_git_go_billy_v5//memfs",
-        "@in_gopkg_check_v1//:check_v1",
+        "@com_github_go_git_go_billy_v5//memfs:go_default_library",
+        "@in_gopkg_check_v1//:go_default_library",
     ],
 )

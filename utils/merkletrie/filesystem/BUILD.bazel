@@ -9,7 +9,7 @@ go_library(
         "//plumbing",
         "//plumbing/filemode",
         "//utils/merkletrie/noder",
-        "@com_github_go_git_go_billy_v5//:go-billy",
+        "@com_github_go_git_go_billy_v5//:go_default_library",
     ],
 )
 
@@ -21,8 +21,8 @@ go_test(
         "//plumbing",
         "//utils/merkletrie",
         "//utils/merkletrie/noder",
-        "@com_github_go_git_go_billy_v5//:go-billy",
-        "@com_github_go_git_go_billy_v5//memfs",
-        "@in_gopkg_check_v1//:check_v1",
+        "@com_github_go_git_go_billy_v5//:go_default_library",
+        "@com_github_go_git_go_billy_v5//memfs:go_default_library",
+        "@in_gopkg_check_v1//:go_default_library",
     ],
 )

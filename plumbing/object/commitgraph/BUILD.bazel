@@ -16,7 +16,7 @@ go_library(
         "//plumbing/format/commitgraph",
         "//plumbing/object",
         "//plumbing/storer",
-        "@com_github_emirpasic_gods//trees/binaryheap",
+        "@com_github_emirpasic_gods//trees/binaryheap:go_default_library",
     ],
 )
 
@@ -30,7 +30,7 @@ go_test(
         "//plumbing/format/commitgraph",
         "//plumbing/format/packfile",
         "//storage/filesystem",
-        "@com_github_go_git_go_git_fixtures_v4//:go-git-fixtures",
-        "@in_gopkg_check_v1//:check_v1",
+        "@com_github_go_git_go_git_fixtures_v4//:go_default_library",
+        "@in_gopkg_check_v1//:go_default_library",
     ],
 )
