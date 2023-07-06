@@ -1,9 +1,7 @@
 package git
 
 import (
-	"bytes"
 	"errors"
-	"io"
 	"path"
 	"sort"
 	"strings"
