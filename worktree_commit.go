@@ -1,19 +1,17 @@
 package git
 
 import (
-	"bytes"
 	"errors"
 	"path"
 	"sort"
 	"strings"
 
-	"github.com/go-git/go-git/v5/plumbing"
-	"github.com/go-git/go-git/v5/plumbing/filemode"
-	"github.com/go-git/go-git/v5/plumbing/format/index"
-	"github.com/go-git/go-git/v5/plumbing/object"
-	"github.com/go-git/go-git/v5/storage"
+	"github.com/sgnl-ai/go-git/plumbing"
+	"github.com/sgnl-ai/go-git/plumbing/filemode"
+	"github.com/sgnl-ai/go-git/plumbing/format/index"
+	"github.com/sgnl-ai/go-git/plumbing/object"
+	"github.com/sgnl-ai/go-git/storage"
 
-	"github.com/ProtonMail/go-crypto/openpgp"
 	"github.com/go-git/go-billy/v5"
 )
 
@@ -108,35 +106,11 @@ func (w *Worktree) buildCommitObject(msg string, opts *CommitOptions, tree plumb
 		ParentHashes: opts.Parents,
 	}
 
-	if opts.SignKey != nil {
-		sig, err := w.buildCommitSignature(commit, opts.SignKey)
-		if err != nil {
-			return plumbing.ZeroHash, err
-		}
-		commit.PGPSignature = sig
-	}
-
 	obj := w.r.Storer.NewEncodedObject()
 	if err := commit.Encode(obj); err != nil {
 		return plumbing.ZeroHash, err
 	}
 	return w.r.Storer.SetEncodedObject(obj)
-}
-
-func (w *Worktree) buildCommitSignature(commit *object.Commit, signKey *openpgp.Entity) (string, error) {
-	encoded := &plumbing.MemoryObject{}
-	if err := commit.Encode(encoded); err != nil {
-		return "", err
-	}
-	r, err := encoded.Reader()
-	if err != nil {
-		return "", err
-	}
-	var b bytes.Buffer
-	if err := openpgp.ArmoredDetachSign(&b, signKey, r, nil); err != nil {
-		return "", err
-	}
-	return b.String(), nil
 }
 
 // buildTreeHelper converts a given index.Index file into multiple git objects
