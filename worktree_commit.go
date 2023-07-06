@@ -115,20 +115,6 @@ func (w *Worktree) buildCommitObject(msg string, opts *CommitOptions, tree plumb
 	return w.r.Storer.SetEncodedObject(obj)
 }
 
-func (w *Worktree) buildCommitSignature(commit *object.Commit) (string, error) {
-	encoded := &plumbing.MemoryObject{}
-	if err := commit.Encode(encoded); err != nil {
-		return "", err
-	}
-	r, err := encoded.Reader()
-	if err != nil {
-		return "", err
-	}
-	var b bytes.Buffer
-	io.Copy(&b, r)
-	return b.String(), nil
-}
-
 // buildTreeHelper converts a given index.Index file into multiple git objects
 // reading the blobs from the given filesystem and creating the trees from the
 // index structure. The created objects are pushed to a given Storer.

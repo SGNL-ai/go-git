@@ -2439,7 +2439,6 @@ func (s *RepositorySuite) TestCreateTagCanonicalize(c *C) {
 	_, err = r.CreateTag("foobar", h.Hash(), &CreateTagOptions{
 		Tagger:  defaultSignature(),
 		Message: "\n\nfoo bar baz qux\n\nsome message here",
-		// SignKey: key,
 	})
 	c.Assert(err, IsNil)
 
